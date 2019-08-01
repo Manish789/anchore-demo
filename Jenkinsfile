@@ -36,7 +36,7 @@ node {
       },
       Analyze: {
         writeFile file: anchorefile, text: repotag
-        anchore policyName: policybundle , bailOnFail: false, name: anchorefile, annotations: [[key: 'added-by', value: 'jenkins']]
+        anchore bailOnFail: false, name: anchorefile, annotations: [[key: 'added-by', value: 'jenkins']]
       }
     }
   } finally {
