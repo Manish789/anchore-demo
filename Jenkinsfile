@@ -20,7 +20,7 @@ node {
 
     stage('Build') {
       // Build the image and push it to a staging repository
-      repotag = 'anchore' + ":${BUILD_NUMBER}"
+      repotag = '220536757961.dkr.ecr.ap-south-1.amazonaws.com/anchore' + ":${BUILD_NUMBER}"
       docker.withRegistry('https://220536757961.dkr.ecr.ap-south-1.amazonaws.com', 'ecr:ap-south-1:aws-ecr-cred') {
         app = docker.build(repotag)
         app.push()
