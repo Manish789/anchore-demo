@@ -15,6 +15,7 @@ node {
       def path = sh returnStdout: true, script: "pwd"
       path = path.trim()
       dockerfile = path + "/Dockerfile"
+      echo dockerfile
       anchorefile = path + "/anchore_images"
     }
 
