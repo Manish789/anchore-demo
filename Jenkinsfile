@@ -35,7 +35,7 @@ node {
       },
       Analyze: {
         writeFile file: anchorefile, text: '220536757961.dkr.ecr.ap-south-1.amazonaws.com' + "/" + repotag + " " + dockerfile
-        anchore name: anchorefile, engineurl: '172.19.0.6:8228/v1', engineCredentialsId: registryCredential , annotations: [[key: 'added-by', value: 'jenkins']]
+        anchore name: anchorefile
       }
     }
   } finally {
