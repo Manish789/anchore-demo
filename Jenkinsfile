@@ -34,7 +34,7 @@ node {
         }
       },
       Analyze: {
-        writeFile file: anchorefile, text: '220536757961.dkr.ecr.ap-south-1.amazonaws.com' + "/" + repotag + " " + dockerfile
+        writeFile file: anchorefile, text: repotag + " " + dockerfile
         anchore name: anchorefile
       }
     }
