@@ -35,7 +35,7 @@ node {
       },
       Analyze: {
         writeFile file: anchorefile, text: repotag + " " + dockerfile
-        anchore name: anchorefile
+        anchore name: anchorefile, annotations: [[key: 'added-by', value: 'jenkins']]
       }
     }
   } finally {
