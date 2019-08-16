@@ -1,7 +1,7 @@
 #!groovy
 pipeline{
     
-    agent {
+    agent any {
 	    environment{
             PROJECT = "anchore"
             ECRURL = "http://220536757961.dkr.ecr.ap-south-1.amazonaws.com"
