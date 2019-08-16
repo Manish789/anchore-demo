@@ -1,5 +1,17 @@
-node {
-  def imageLine = '220536757961.dkr.ecr.ap-south-1.amazonaws.com/anchore:20'
-  writeFile file: 'anchore_images', text: imageLine
-  anchore name: 'anchore_images'
+#!groovy
+
+agent {
+	environment{
+        PROJECT = "anchore"
+        ECRURL = "http://220536757961.dkr.ecr.ap-south-1.amazonaws.com"
+        ECRCRED ="ecr:ap-south-1:aws-ecr-cred"
+    }
+	
+	stage('image pull'){
+        sh("eval \$(aws ecr get-login --no-include-email | sed 's|https://||')")
+		docker.withRegistry(ECRURL, ECRCRED){
+            docker.image(PROJECT).pull()
+        }
+	}
+
 }
